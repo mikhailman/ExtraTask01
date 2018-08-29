@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<CATALOG>
+    <CATEGORY>
+        <CATEGORY_NAME >Films</CATEGORY_NAME>
+        <SUBCATEGORY>
+            <SUBCATEGORY_NAME>action</SUBCATEGORY_NAME>
+            <NEWS_NAME>Avengers</NEWS_NAME>
+            <PROVIDER_AUTHOR_AUTHORS>Brothers Russo</PROVIDER_AUTHOR_AUTHORS>
+            <DATE_OF_ISSUE>24.04.2018</DATE_OF_ISSUE>
+            <NEWS_BODY>superhero movie</NEWS_BODY>
+        </SUBCATEGORY>
+        <SUBCATEGORY>
+            <SUBCATEGORY_NAME>comedy</SUBCATEGORY_NAME>
+            <NEWS_NAME>The Guard</NEWS_NAME>
+            <PROVIDER_AUTHOR_AUTHORS>John Michael McDonagh</PROVIDER_AUTHOR_AUTHORS>
+            <DATE_OF_ISSUE>07.07.2011</DATE_OF_ISSUE>
+            <NEWS_BODY>Women, booze and funny jokes</NEWS_BODY>
+        </SUBCATEGORY>
+        <SUBCATEGORY>
+            <SUBCATEGORY_NAME>story</SUBCATEGORY_NAME>
+            <NEWS_NAME>Christopher Robin</NEWS_NAME>
+            <PROVIDER_AUTHOR_AUTHORS>Marc Forster</PROVIDER_AUTHOR_AUTHORS>
+            <DATE_OF_ISSUE>30.07.2018</DATE_OF_ISSUE>
+            <NEWS_BODY>Sooner or later, your past catches up to you</NEWS_BODY>
+        </SUBCATEGORY>
+    </CATEGORY>
+    <CATEGORY>
+        <CATEGORY_NAME>Discs</CATEGORY_NAME>
+        <SUBCATEGORY>
+            <SUBCATEGORY_NAME>pop</SUBCATEGORY_NAME>
+            <NEWS_NAME>V</NEWS_NAME>
+            <PROVIDER_AUTHOR_AUTHORS>Maroon 5</PROVIDER_AUTHOR_AUTHORS>
+            <DATE_OF_ISSUE>29.08.2014</DATE_OF_ISSUE>
+            <NEWS_BODY>the album of Maroon 5</NEWS_BODY>
+        </SUBCATEGORY>
+        <SUBCATEGORY>
+            <SUBCATEGORY_NAME>rock</SUBCATEGORY_NAME>
+            <NEWS_NAME>T.N.T.</NEWS_NAME>
+            <PROVIDER_AUTHOR_AUTHORS>ACDC</PROVIDER_AUTHOR_AUTHORS>
+            <DATE_OF_ISSUE>03.12.1975</DATE_OF_ISSUE>
+            <NEWS_BODY>the album of ACDC</NEWS_BODY>
+        </SUBCATEGORY>
+        <SUBCATEGORY>
+            <SUBCATEGORY_NAME>metal</SUBCATEGORY_NAME>
+            <NEWS_NAME>Follow the Leader</NEWS_NAME>
+            <PROVIDER_AUTHOR_AUTHORS>Korn</PROVIDER_AUTHOR_AUTHORS>
+            <DATE_OF_ISSUE>18.08.1998</DATE_OF_ISSUE>
+            <NEWS_BODY>the album of Korn</NEWS_BODY>
+        </SUBCATEGORY>
+    </CATEGORY>
+    <CATEGORY>
+        <CATEGORY_NAME>Books</CATEGORY_NAME>
+        <SUBCATEGORY>
+            <SUBCATEGORY_NAME>novel</SUBCATEGORY_NAME>
+            <NEWS_NAME>Gone with the Wind</NEWS_NAME>
+            <PROVIDER_AUTHOR_AUTHORS>Margaret Munnerlyn Mitchell</PROVIDER_AUTHOR_AUTHORS>
+            <DATE_OF_ISSUE>30.06.1936</DATE_OF_ISSUE>
+            <NEWS_BODY>the novel by Margaret Mitchell</NEWS_BODY>
+        </SUBCATEGORY>
+        <SUBCATEGORY>
+            <SUBCATEGORY_NAME>science</SUBCATEGORY_NAME>
+            <NEWS_NAME>Refactoring</NEWS_NAME>
+            <PROVIDER_AUTHOR_AUTHORS>Martin Fowler</PROVIDER_AUTHOR_AUTHORS>
+            <DATE_OF_ISSUE>01.01.1999</DATE_OF_ISSUE>
+            <NEWS_BODY>the book by Martin Fowler</NEWS_BODY>
+        </SUBCATEGORY>
+        <SUBCATEGORY>
+            <SUBCATEGORY_NAME>drama</SUBCATEGORY_NAME>
+            <NEWS_NAME>Les Miserables</NEWS_NAME>
+            <PROVIDER_AUTHOR_AUTHORS>Victor Hugo</PROVIDER_AUTHOR_AUTHORS>
+            <DATE_OF_ISSUE>01.01.1862</DATE_OF_ISSUE>
+            <NEWS_BODY>the drama by Victor Hugo</NEWS_BODY>
+        </SUBCATEGORY>
+    </CATEGORY>
+</CATALOG>
