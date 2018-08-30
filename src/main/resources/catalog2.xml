@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<catalog xmlns="http://jd2.htp.ExtraTask01.com">
+
+    <category name="Films">
+        <subcategory name="action">
+            <news name="Avengers" provider="Brothers Russo" dateOfIssue="24.04.2018" newsBody="superhero movie"/>
+        </subcategory>
+    </category>
+
+    <category name="discs">
+        <subcategory name="pop">
+            <news name="V" provider="Maroon 5" dateOfIssue="29.08.2014" newsBody="the album of Maroon 5"/>
+        </subcategory>
+    </category>
+
+    <category name="Books">
+        <subcategory name="novel">
+            <news name="Gone with the Wind" provider="Margaret Munnerlyn Mitchell" dateOfIssue="30.06.1936" newsBody="the novel by Margaret Mitchell"/>
+        </subcategory>
+    </category>
+
+</catalog>
