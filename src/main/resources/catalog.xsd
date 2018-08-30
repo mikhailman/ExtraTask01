@@ -1,28 +1,28 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <xs:schema elementFormDefault="qualified"
            xmlns:xs="http://www.w3.org/2001/XMLSchema">
-    <xs:element name="CATALOG">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element name="CATEGORY" maxOccurs="unbounded" minOccurs="0">
-                    <xs:complexType>
-                        <xs:sequence>
-                            <xs:element name="SUBCATEGORY" maxOccurs="unbounded" minOccurs="0">
-                                <xs:complexType>
-                                    <xs:sequence>
-                                        <xs:element type="xs:string" name="NEWS_NAME"/>
-                                        <xs:element type="xs:string" name="PROVIDER_AUTHOR_AUTHORS"/>
-                                        <xs:element type="xs:string" name="DATE_OF_ISSUE"/>
-                                        <xs:element type="xs:string" name="NEWS_BODY"/>
-                                    </xs:sequence>
-                                    <xs:attribute type="xs:string" name="Name"/>
-                                </xs:complexType>
-                            </xs:element>
-                        </xs:sequence>
-                        <xs:attribute type="xs:string" name="Name"/>
-                    </xs:complexType>
-                </xs:element>
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>
+<xs:element name="CATALOG">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element maxOccurs="unbounded" name="CATEGORY">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" name="SUBCATEGORY">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="NEWS_NAME" type="xs:string" />
+                                    <xs:element name="PROVIDER_AUTHOR_AUTHORS" type="xs:string" />
+                                    <xs:element name="DATE_OF_ISSUE" type="xs:string" />
+                                    <xs:element name="NEWS_BODY" type="xs:string" />
+                                </xs:sequence>
+                                <xs:attribute name="Name" type="xs:string" use="required" />
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                    <xs:attribute name="Name" type="xs:string" use="required" />
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+</xs:element>
 </xs:schema>
