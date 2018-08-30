@@ -12,6 +12,7 @@ import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlType;
+import java.util.Objects;
 
 
 /**
@@ -141,6 +142,34 @@ public class News {
      */
     public void setNewsBody(String value) {
         this.newsBody = value;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        News news = (News) o;
+        return Objects.equals(name, news.name) &&
+                Objects.equals(provider, news.provider) &&
+                Objects.equals(dateOfIssue, news.dateOfIssue) &&
+                Objects.equals(newsBody, news.newsBody);
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(super.hashCode(), name, provider, dateOfIssue, newsBody);
+    }
+
+    @Override
+    public String toString() {
+        return "News{" +
+                "name='" + name + '\'' +
+                ", provider='" + provider + '\'' +
+                ", date='" + dateOfIssue + '\'' +
+                ", body='" + newsBody + '\'' +
+                '}';
     }
 
 }
