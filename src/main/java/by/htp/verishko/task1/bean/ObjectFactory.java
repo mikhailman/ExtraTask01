@@ -6,7 +6,7 @@
 //
 
 
-package bean;
+package by.htp.verishko.task1.bean;
 
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlElementDecl;

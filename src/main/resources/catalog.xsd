@@ -1,28 +1,31 @@
-<?xml version="1.0" encoding="utf-8"?>
-<xs:schema elementFormDefault="qualified"
-           xmlns:xs="http://www.w3.org/2001/XMLSchema">
-<xs:element name="CATALOG">
-    <xs:complexType>
-        <xs:sequence>
-            <xs:element maxOccurs="unbounded" name="CATEGORY">
-                <xs:complexType>
-                    <xs:sequence>
-                        <xs:element maxOccurs="unbounded" name="SUBCATEGORY">
-                            <xs:complexType>
-                                <xs:sequence>
-                                    <xs:element name="NEWS_NAME" type="xs:string" />
-                                    <xs:element name="PROVIDER_AUTHOR_AUTHORS" type="xs:string" />
-                                    <xs:element name="DATE_OF_ISSUE" type="xs:string" />
-                                    <xs:element name="NEWS_BODY" type="xs:string" />
-                                </xs:sequence>
-                                <xs:attribute name="Name" type="xs:string" use="required" />
-                            </xs:complexType>
-                        </xs:element>
-                    </xs:sequence>
-                    <xs:attribute name="Name" type="xs:string" use="required" />
-                </xs:complexType>
-            </xs:element>
-        </xs:sequence>
-    </xs:complexType>
-</xs:element>
-</xs:schema>
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        elementFormDefault="qualified"
+        targetNamespace="http://jd2.htp.ExtraTask01.com"
+        xmlns:trg="http://jd2.htp.ExtraTask01.com">
+    <element name="catalog" type="trg:Catalog"/>
+    <complexType name="Catalog">
+        <sequence>
+            <element name="category" type="trg:Category" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+        <attribute name="name" type="string"/>
+    </complexType>
+    <complexType name="Category">
+        <sequence>
+            <element name="subCategory" type="trg:SubCategory" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+        <attribute type="string" name="Name"/>
+    </complexType>
+    <complexType name="SubCategory">
+        <sequence>
+            <element name="news" type="trg:News" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+        <attribute type="string" name="Name"/>
+    </complexType>
+    <complexType name="News">
+        <attribute type="string" name="Name"/>
+        <attribute type="string" name="Provider"/>
+        <attribute type="string" name="DateOfIssue"/>
+        <attribute name="newsBody" type="string"/>
+    </complexType>
+</schema>

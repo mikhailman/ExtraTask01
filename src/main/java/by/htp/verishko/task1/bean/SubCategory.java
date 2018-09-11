@@ -6,10 +6,11 @@
 //
 
 
-package bean;
+package by.htp.verishko.task1.bean;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAttribute;
@@ -17,71 +18,65 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for Category complex type.
- * 
+ * <p>Java class for SubCategory complex type.
+ * <p>
  * <p>The following schema fragment specifies the expected         content contained within this class.
- * 
+ * <p>
  * <pre>
- * &lt;complexType name="Category"&gt;
+ * &lt;complexType name="SubCategory"&gt;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="subCategory" type="{http://jd2.htp.ExtraTask01.com}SubCategory" maxOccurs="unbounded" minOccurs="0"/&gt;
+ *         &lt;element name="news" type="{http://jd2.htp.ExtraTask01.com}News" maxOccurs="unbounded" minOccurs="0"/&gt;
  *       &lt;/sequence&gt;
  *       &lt;attribute name="Name" type="{http://www.w3.org/2001/XMLSchema}string" /&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Category", propOrder = {
-    "subCategory"
+@XmlType(name = "SubCategory", propOrder = {
+        "news"
 })
-public class Category {
+public class SubCategory {
 
-    protected List<SubCategory> subCategory;
+    protected List<News> news;
     @XmlAttribute(name = "Name")
     protected String name;
 
     /**
-     * Gets the value of the subCategory property.
-     * 
+     * Gets the value of the news property.
+     * <p>
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the subCategory property.
-     * 
+     * This is why there is not a <CODE>set</CODE> method for the news property.
+     * <p>
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getSubCategory().add(newItem);
+     *    getNews().add(newItem);
      * </pre>
-     * 
-     * 
+     * <p>
+     * <p>
      * <p>
      * Objects of the following type(s) are allowed in the list
-     * {@link SubCategory }
-     * 
-     * 
+     * {@link News }
      */
-    public List<SubCategory> getSubCategory() {
-        if (subCategory == null) {
-            subCategory = new ArrayList<SubCategory>();
+    public List<News> getNews() {
+        if (news == null) {
+            news = new ArrayList<News>();
         }
-        return this.subCategory;
+        return this.news;
     }
 
     /**
      * Gets the value of the name property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getName() {
         return name;
@@ -89,14 +84,40 @@ public class Category {
 
     /**
      * Sets the value of the name property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setName(String value) {
         this.name = value;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || this.getClass() != o.getClass()) {
+            return false;
+        }
+        SubCategory that = (SubCategory) o;
+        return Objects.equals(news, that.news) &&
+                Objects.equals(name, that.name);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = 1;
+        result = result * 31 + (news == null ? 0 : news.hashCode()) * result;
+        result = result * 31 + (name == null ? 0 : name.hashCode()) * result;
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return "SubCategory{" +
+                "news=" + news +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }

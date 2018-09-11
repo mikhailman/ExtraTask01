@@ -6,7 +6,7 @@
 //
 
 
-package bean;
+package by.htp.verishko.task1.bean;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -158,8 +158,12 @@ public class News {
 
     @Override
     public int hashCode() {
-
-        return Objects.hash(super.hashCode(), name, provider, dateOfIssue, newsBody);
+        int result = 1;
+        result = result * 31 + (newsBody == null ? 0 : newsBody.hashCode()) * result;
+        result = result * 31 + (name == null ? 0 : name.hashCode()) * result;
+        result = result * 31 + (provider == null ? 0 : provider.hashCode()) * result;
+        result = result * 31 + (dateOfIssue == null ? 0 : dateOfIssue.hashCode()) * result;
+        return result;
     }
 
     @Override

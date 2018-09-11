@@ -6,21 +6,19 @@
 //
 
 
-package bean;
+package by.htp.verishko.task1.bean;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlType;
+import java.util.Objects;
+import javax.xml.bind.annotation.*;
 
 
 /**
  * <p>Java class for Catalog complex type.
- * 
+ * <p>
  * <p>The following schema fragment specifies the expected         content contained within this class.
- * 
+ * <p>
  * <pre>
  * &lt;complexType name="Catalog"&gt;
  *   &lt;complexContent&gt;
@@ -33,12 +31,11 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
+@XmlRootElement(name = "catalog")
 @XmlType(name = "Catalog", propOrder = {
-    "category"
+        "category"
 })
 public class Catalog {
 
@@ -48,25 +45,23 @@ public class Catalog {
 
     /**
      * Gets the value of the category property.
-     * 
+     * <p>
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
      * This is why there is not a <CODE>set</CODE> method for the category property.
-     * 
+     * <p>
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
      *    getCategory().add(newItem);
      * </pre>
-     * 
-     * 
+     * <p>
+     * <p>
      * <p>
      * Objects of the following type(s) are allowed in the list
      * {@link Category }
-     * 
-     * 
      */
     public List<Category> getCategory() {
         if (category == null) {
@@ -77,11 +72,9 @@ public class Catalog {
 
     /**
      * Gets the value of the name property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getName() {
         return name;
@@ -89,14 +82,37 @@ public class Catalog {
 
     /**
      * Sets the value of the name property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setName(String value) {
         this.name = value;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || this.getClass() != o.getClass()) {
+            return false;
+        }
+        Catalog catalog = (Catalog) o;
+        return Objects.equals(category, catalog.category);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = 1;
+        result = result * 31 + (category == null ? 0 : category.hashCode()) * result;
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Catalog{" +
+                "category=" + category +
+                '}';
+    }
 }
