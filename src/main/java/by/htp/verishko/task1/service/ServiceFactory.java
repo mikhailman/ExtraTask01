@@ -19,9 +19,9 @@ public class ServiceFactory {
         return jaxbService;
     }
 
-    private final ICatalogService catalogService = (ICatalogService) new CatalogServiceImpl();
+    private final CatalogServiceImpl catalogService = new CatalogServiceImpl();
 
-    public ICatalogService getCatalogService() {
+    public CatalogServiceImpl getCatalogService() {
         return catalogService;
     }
 }
