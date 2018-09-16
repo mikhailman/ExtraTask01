@@ -67,20 +67,40 @@ public class CatalogDAOImpl implements CatalogDAO {
 
     @Override
     public News add(News news) throws DAOException, JAXBException {
-//        JAXB jaxb = new JAXB();
-//        Catalog catalog = jaxb.xmlReader();
-//        News addNews = new News();
-//
-//
-//        for (Category category : catalog.getCategory()) {
-//            if (category.getName().equals(SearchCriteria.News.CATEGORY_NAME))
-//                continue;
-//            for (SubCategory subCategory : category.getSubCategory()) {
-//                if (category.getName().equals(SearchCriteria.News.SUBCATEGORY_NAME))
-//
-//
-//            }
-//        }
-        return null;
+        JAXB jaxb = new JAXB();
+        Catalog catalog = jaxb.xmlReader();
+        News addNews = new News();
+        CatalogDAOImpl catalogDAO = new CatalogDAOImpl();
+
+        for (Category category : catalog.getCategory()) {
+            if (category.getName().equals(SearchCriteria.News.CATEGORY_NAME))
+                continue;
+            for (SubCategory subCategory : category.getSubCategory()) {
+                if (category.getName().equals(SearchCriteria.News.SUBCATEGORY_NAME)) {
+//                    category.getSubCategory().add(catalogDAO.addParamNews(news, ));
+                }
+            }
+        }
+        return addNews;
+    }
+
+    private News addParamNews(News news, Criteria criteria) {
+        for (Map.Entry<SearchCriteria.News, Object> item : criteria.getCriteria().entrySet()) {
+            switch (item.getKey()) {
+                case NAME:
+                    news.setName("name");
+                    break;
+                case PROVIDER:
+                    news.setProvider("Vasya");
+                    break;
+                case DATE_OF_ISSUE:
+                    news.setDateOfIssue("12.43.77");
+                    break;
+                case NEWS_BODY:
+                    news.setNewsBody("Vasya lubit Mashkere");
+                    break;
+            }
+        }
+        return news;
     }
 }
