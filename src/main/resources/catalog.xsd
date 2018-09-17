@@ -1,31 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schema xmlns="http://www.w3.org/2001/XMLSchema"
-        elementFormDefault="qualified"
         targetNamespace="http://jd2.htp.ExtraTask01.com"
-        xmlns:trg="http://jd2.htp.ExtraTask01.com">
-    <element name="catalog" type="trg:Catalog"/>
+        xmlns:xs="http://jd2.htp.ExtraTask01.com"
+        elementFormDefault="qualified">
+
+    <element name="catalog" type="xs:Catalog"/>
     <complexType name="Catalog">
         <sequence>
-            <element name="category" type="trg:Category" minOccurs="0" maxOccurs="unbounded"/>
+            <element name="category" type="xs:Category" minOccurs="0" maxOccurs="unbounded"/>
         </sequence>
         <attribute name="name" type="string"/>
     </complexType>
     <complexType name="Category">
         <sequence>
-            <element name="subCategory" type="trg:SubCategory" minOccurs="0" maxOccurs="unbounded"/>
+            <element name="subcategory" type="xs:SubCategory" minOccurs="0" maxOccurs="unbounded"/>
         </sequence>
-        <attribute type="string" name="Name"/>
+        <attribute name="name" type="string"/>
     </complexType>
     <complexType name="SubCategory">
         <sequence>
-            <element name="news" type="trg:News" minOccurs="0" maxOccurs="unbounded"/>
+            <element name="news" type="xs:News" minOccurs="0" maxOccurs="unbounded"/>
         </sequence>
-        <attribute type="string" name="Name"/>
+        <attribute name="name" type="string"/>
     </complexType>
     <complexType name="News">
-        <attribute type="string" name="Name"/>
-        <attribute type="string" name="Provider"/>
-        <attribute type="string" name="DateOfIssue"/>
+        <attribute name="name" type="string"/>
+        <attribute name="provider" type="string"/>
+        <attribute name="dateOfIssue" type="string"/>
         <attribute name="newsBody" type="string"/>
     </complexType>
+
 </schema>

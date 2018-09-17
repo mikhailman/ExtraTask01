@@ -1,5 +1,6 @@
 package by.htp.verishko.task1.dao.impl;
 
+
 import by.htp.verishko.task1.bean.Catalog;
 import by.htp.verishko.task1.bean.Category;
 import by.htp.verishko.task1.bean.News;
@@ -22,11 +23,12 @@ public class CatalogDAOImpl implements CatalogDAO {
         List<News> resultFind = new ArrayList<>();
 
         for (Category category : catalog.getCategory()) {
-            if (category.getName().equals(SearchCriteria.News.CATEGORY_NAME))
-                continue;
-            for (SubCategory subCategory : category.getSubCategory()) {
-                if (category.getName().equals(SearchCriteria.News.SUBCATEGORY_NAME))
-                    continue;
+            if (!category.getName().equals(SearchCriteria.News.CATEGORY_NAME)) {
+                return null;
+            }
+            for (SubCategory subCategory : category.getSubcategory()) {
+                if (!category.getName().equals(SearchCriteria.News.SUBCATEGORY_NAME))
+                    return null;
                 for (News item : subCategory.getNews()) {
                     if (findNews(item, criteria)) {
                         resultFind.add(item);
@@ -66,18 +68,19 @@ public class CatalogDAOImpl implements CatalogDAO {
     }
 
     @Override
-    public News add(News news) throws DAOException, JAXBException {
+    public News add(Criteria criteria) throws DAOException, JAXBException {
         JAXB jaxb = new JAXB();
         Catalog catalog = jaxb.xmlReader();
         News addNews = new News();
-        CatalogDAOImpl catalogDAO = new CatalogDAOImpl();
+//        CatalogDAOImpl catalogDAO = new CatalogDAOImpl();
 
         for (Category category : catalog.getCategory()) {
-            if (category.getName().equals(SearchCriteria.News.CATEGORY_NAME))
-                continue;
-            for (SubCategory subCategory : category.getSubCategory()) {
+            if (!category.getName().equals(SearchCriteria.News.CATEGORY_NAME)) {
+                return null;
+            }
+            for (SubCategory subCategory : category.getSubcategory()) {
                 if (category.getName().equals(SearchCriteria.News.SUBCATEGORY_NAME)) {
-//                    category.getSubCategory().add(catalogDAO.addParamNews(news, ));
+                    addNews = addParamNews(addNews, criteria);
                 }
             }
         }
