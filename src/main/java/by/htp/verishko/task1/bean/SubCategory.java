@@ -39,7 +39,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "SubCategory", propOrder = {
         "news"
 })
-public class SubCategory {
+public class SubCategory implements IBaseEntity {
 
     protected List<News> news;
     @XmlAttribute(name = "name")

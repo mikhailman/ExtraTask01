@@ -35,7 +35,7 @@ import java.util.Objects;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "News")
-public class News {
+public class News implements IBaseEntity {
 
     @XmlAttribute(name = "name")
     protected String name;

@@ -5,7 +5,7 @@
             <news name="Avengers" provider="Brothers Russo" dateOfIssue="24.04.2018" newsBody="superhero movie"/>
         </subcategory>
     </category>
-    <category name="discs">
+    <category name="Discs">
         <subcategory name="pop">
             <news name="V" provider="Maroon 5" dateOfIssue="29.08.2014" newsBody="the album of Maroon 5"/>
         </subcategory>

@@ -1,9 +1,9 @@
 package by.htp.verishko.task1.service;
 
 import by.htp.verishko.task1.service.impl.CatalogServiceImpl;
-import by.htp.verishko.task1.service.impl.JAXBServiceImpl;
+//import by.htp.verishko.task1.service.impl.JAXBServiceImpl;
 
-public class ServiceFactory {
+public final class ServiceFactory {
     private static final ServiceFactory instance = new ServiceFactory();
 
     private ServiceFactory() {
@@ -13,11 +13,11 @@ public class ServiceFactory {
         return instance;
     }
 
-    private final IJAXBService jaxbService = new JAXBServiceImpl();
+//    private final IJAXBService jaxbService = new JAXBServiceImpl();
 
-    public IJAXBService getJaxbService() {
-        return jaxbService;
-    }
+//    public IJAXBService getJaxbService() {
+//        return jaxbService;
+//    }
 
     private final CatalogServiceImpl catalogService = new CatalogServiceImpl();
 

@@ -1,10 +1,7 @@
 package by.htp.verishko.task1.dao.impl;
 
 
-import by.htp.verishko.task1.bean.Catalog;
-import by.htp.verishko.task1.bean.Category;
-import by.htp.verishko.task1.bean.News;
-import by.htp.verishko.task1.bean.SubCategory;
+import by.htp.verishko.task1.bean.*;
 import by.htp.verishko.task1.bean.criteria.Criteria;
 import by.htp.verishko.task1.bean.criteria.SearchCriteria;
 import by.htp.verishko.task1.dao.CatalogDAO;
@@ -23,12 +20,13 @@ public class CatalogDAOImpl implements CatalogDAO {
         List<News> resultFind = new ArrayList<>();
 
         for (Category category : catalog.getCategory()) {
-            if (!category.getName().equals(SearchCriteria.News.CATEGORY_NAME)) {
-                return null;
-            }
+//            if (!category.getName().equals(SearchCriteria.News.CATEGORY_NAME)) {
+            if (!SC(category, criteria, SearchCriteria.News.CATEGORY_NAME))
+                continue;
             for (SubCategory subCategory : category.getSubcategory()) {
-                if (!category.getName().equals(SearchCriteria.News.SUBCATEGORY_NAME))
-                    return null;
+                if (!SC(subCategory, criteria, SearchCriteria.News.SUBCATEGORY_NAME))
+//                if (!category.getName().equals(SearchCriteria.News.SUBCATEGORY_NAME))
+                    continue;
                 for (News item : subCategory.getNews()) {
                     if (findNews(item, criteria)) {
                         resultFind.add(item);
@@ -38,6 +36,15 @@ public class CatalogDAOImpl implements CatalogDAO {
         }
         return resultFind;
     }
+
+    private boolean SC(IBaseEntity item, Criteria criteria, SearchCriteria.News nameValue) {
+        if (criteria.getCriteria().containsKey(nameValue)) {
+            Object value = criteria.getCriteria().get(nameValue);
+            return item.getName().equals(value);
+        }
+        return true;
+    }
+
 
     private boolean findNews(News news, Criteria criteria) {
         for (Map.Entry<SearchCriteria.News, Object> entry : criteria.getCriteria().entrySet()) {
